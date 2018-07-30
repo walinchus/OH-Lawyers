@@ -34,7 +34,7 @@ def scrape_table(root):
 
 
 
-br = mechanize.Browser()
+'''br = mechanize.Browser()
 #br.set_all_readonly(False)    # allow everything to be written to
 br.set_handle_robots(False)   # ignore robots
 br.set_handle_refresh(False)  # can sometimes hang without this
@@ -44,7 +44,7 @@ br.open("https://www.zeekbeek.com/OSBA/Search-Results#region=OH")
     #print f
 for form in br.forms():
     print "Form name:", form.name
-    print form
+    print form'''
 
 '''formcount=0
 for frm in br.forms():  
@@ -67,11 +67,13 @@ br['lname'] = str('JONES')'''
 
 #br['mname'] = str(['Middle name'])
 #br['fname'] = str(['WILLIAM'])
-print br
+
+'''print br
 response = br.submit()
 html = response.read()
 print html
-root = lxml.html.fromstring(html)
+root = lxml.html.fromstring(html)'''
+
 #scrape_table(root)
 
     
@@ -79,8 +81,8 @@ root = lxml.html.fromstring(html)
     
     
 # # Read in a page
-# html = scraperwiki.scrape("http://foo.com")
-#
+html = scraperwiki.scrape("https://www.zeekbeek.com/OSBA/Search-Results#region=OH")
+print html
 # # Find something on the page using css selectors
 # root = lxml.html.fromstring(html)
 # root.cssselect("div[align='left']")
